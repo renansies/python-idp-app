@@ -21,5 +21,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v7
         with:
+          context: .
           push: true
-          tags: renansies/python-app:${{ GITHUB_SHA::6 }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-app:${{ github.sha::6 }}
