@@ -22,4 +22,5 @@ jobs:
         uses: docker/build-push-action@v7
         with:       
           file: Dockerfile
+          push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-app:${{ github.sha }}
